@@ -5,7 +5,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus, HelpCircle } from "lucide-react";
 import { Container } from "@/components/ui";
 
-const defaultFaqs = [
+type FaqItem = {
+  question: string;
+  answer: string;
+};
+
+const defaultFaqs: FaqItem[] = [
   {
     question: "Quelles zones couvrez-vous ?",
     answer:
@@ -43,7 +48,7 @@ function FAQItem({
   isOpen,
   onToggle,
 }: {
-  faq: { question: string; answer: string };
+  faq: FaqItem;
   isOpen: boolean;
   onToggle: () => void;
 }) {
@@ -97,7 +102,7 @@ function FAQ({ data }: { data?: any }) {
   const subtitle = data?.subtitle || "Vous avez des questions ? Nous avons les réponses.";
 
   // Transform Sanity faqItems to component format
-  const faqs = data?.faqItems
+  const faqs: FaqItem[] = data?.faqItems
     ? data.faqItems.map((item: any) => ({
         question: item.question,
         answer: item.reponse, // Note: Sanity uses "reponse" instead of "answer"
@@ -168,7 +173,7 @@ function FAQ({ data }: { data?: any }) {
               transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
               className="bg-neutral-50 rounded-2xl md:rounded-3xl p-4 md:p-6 lg:p-8"
             >
-              {faqs.map((faq, index) => (
+              {faqs.map((faq: FaqItem, index: number) => (
                 <FAQItem
                   key={index}
                   faq={faq}
