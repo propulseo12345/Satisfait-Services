@@ -4,7 +4,9 @@ import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 import { Container, Carousel, CarouselSlide } from "@/components/ui";
 
-const defaultZones = [
+type Zone = { ville: string; description?: string };
+
+const defaultZones: Zone[] = [
   { ville: "Pau", description: "Centre-ville" },
   { ville: "Narcastet", description: "Siège" },
   { ville: "Jurançon", description: "Environs" },
@@ -14,8 +16,6 @@ const defaultZones = [
   { ville: "Idron", description: "Résidentiel" },
   { ville: "Lons", description: "Environs" },
 ];
-
-type Zone = { ville: string; description?: string };
 
 const ZoneCard = ({ ville, description, compact }: Zone & { compact?: boolean }) => (
   <div className={compact ? "p-2 bg-white rounded-lg text-center shadow-sm" : "p-3 lg:p-4 bg-white rounded-xl text-center shadow-sm hover:shadow-md transition-shadow duration-200"}>
@@ -29,7 +29,7 @@ function ZonesCarousel({ data }: { data?: any }) {
   const badge = data?.badge || "Zone d'intervention";
   const mainTitle = data?.mainTitle || "Nous intervenons près de chez vous";
   const subtitle = data?.subtitle || "Pau et agglomération paloise";
-  const zones = data?.zones || defaultZones;
+  const zones: Zone[] = data?.zones || defaultZones;
   return (
     <section className="py-10 md:py-14 lg:py-16 bg-primary-50">
       <Container size="xl" className="px-4 sm:px-6 lg:px-8">
@@ -55,7 +55,7 @@ function ZonesCarousel({ data }: { data?: any }) {
 
         {/* Mobile: Grille 4x2 compacte */}
         <div className="grid grid-cols-4 gap-2 md:hidden">
-          {zones.map((zone, index) => (
+          {zones.map((zone: Zone, index: number) => (
             <motion.div
               key={zone.ville}
               initial={{ opacity: 0, scale: 0.9 }}
@@ -76,7 +76,7 @@ function ZonesCarousel({ data }: { data?: any }) {
           transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
           className="hidden md:grid md:grid-cols-4 lg:grid-cols-8 gap-3 lg:gap-4"
         >
-          {zones.map((zone, index) => (
+          {zones.map((zone: Zone, index: number) => (
             <motion.div
               key={zone.ville}
               initial={{ opacity: 0, scale: 0.9 }}
