@@ -1,0 +1,3134 @@
+[
+  {
+    "fields": [
+      {
+        "description": "Ex: POUR LES PARTICULIERS, POUR LES PROFESSIONNELS",
+        "name": "category",
+        "type": "string",
+        "title": "Catégorie"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "🏠 Maison / Domicile",
+              "value": "maison"
+            },
+            {
+              "title": "🏢 Immeuble / Bureaux",
+              "value": "immeuble"
+            },
+            {
+              "title": "🏪 Magasin / Commerce",
+              "value": "magasin"
+            },
+            {
+              "title": "🏭 Usine / Industrie",
+              "value": "usine"
+            },
+            {
+              "title": "🧹 Balai / Nettoyage",
+              "value": "balai"
+            },
+            {
+              "title": "🧼 Spray / Produits",
+              "value": "spray"
+            },
+            {
+              "title": "✨ Étoiles / Brillance",
+              "value": "etoiles"
+            },
+            {
+              "title": "👔 T-Shirt / Repassage",
+              "value": "tshirt"
+            },
+            {
+              "title": "🧺 Panier / Linge",
+              "value": "panier"
+            },
+            {
+              "title": "🪟 Fenêtre / Vitres",
+              "value": "fenetre"
+            },
+            {
+              "title": "🚿 Douche / Sanitaires",
+              "value": "douche"
+            },
+            {
+              "title": "🍽️ Vaisselle / Cuisine",
+              "value": "vaisselle"
+            },
+            {
+              "title": "📦 Carton / Déménagement",
+              "value": "carton"
+            },
+            {
+              "title": "📊 Grille / Organisation",
+              "value": "grille"
+            },
+            {
+              "title": "⏰ Horloge / Régulier",
+              "value": "horloge"
+            }
+          ],
+          "layout": "dropdown"
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "valid",
+                "constraint": [
+                  "maison",
+                  "immeuble",
+                  "magasin",
+                  "usine",
+                  "balai",
+                  "spray",
+                  "etoiles",
+                  "tshirt",
+                  "panier",
+                  "fenetre",
+                  "douche",
+                  "vaisselle",
+                  "carton",
+                  "grille",
+                  "horloge"
+                ]
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "icon",
+        "type": "string",
+        "title": "Icône"
+      },
+      {
+        "description": "Ex: Entretien courant",
+        "name": "title",
+        "type": "string",
+        "title": "Titre"
+      },
+      {
+        "name": "description",
+        "type": "text"
+      },
+      {
+        "description": "Liste des services inclus",
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "features",
+        "type": "array",
+        "title": "Caractéristiques"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "image",
+        "type": "image"
+      },
+      {
+        "initialValue": "Demander un devis",
+        "name": "buttonText",
+        "type": "string",
+        "title": "Texte du bouton"
+      },
+      {
+        "description": "Pour contrôler l'ordre des prestations (1, 2, 3...)",
+        "name": "order",
+        "type": "number",
+        "title": "Ordre d'affichage"
+      }
+    ],
+    "name": "prestation",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Ex: Services de qualité pour",
+        "name": "heroTitle",
+        "type": "string",
+        "title": "Titre principal"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Le texte qui apparaît en bleu (ex: votre intérieur)",
+        "name": "heroHighlightedText",
+        "type": "string",
+        "title": "Texte en surbrillance"
+      },
+      {
+        "rows": 4,
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Le paragraphe de description sous le titre",
+        "name": "heroDescription",
+        "type": "text",
+        "title": "Description"
+      },
+      {
+        "rows": 2,
+        "description": "Version courte pour mobile (optionnel)",
+        "name": "heroDescriptionMobile",
+        "type": "text",
+        "title": "Description mobile"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Ex: +33 7 69 64 07 24",
+        "name": "phoneNumber",
+        "type": "string",
+        "title": "Numéro de téléphone"
+      },
+      {
+        "initialValue": "Appeler maintenant",
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Texte du bouton principal (téléphone)",
+        "name": "ctaButton1Text",
+        "type": "string",
+        "title": "Texte bouton 1"
+      },
+      {
+        "description": "Texte alternatif pour desktop (optionnel, affichera le numéro par défaut)",
+        "name": "ctaButton1TextDesktop",
+        "type": "string",
+        "title": "Texte bouton 1 (Desktop)"
+      },
+      {
+        "initialValue": "Demander un devis",
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Texte du bouton secondaire (devis)",
+        "name": "ctaButton2Text",
+        "type": "string",
+        "title": "Texte bouton 2"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "fields": [
+          {
+            "validation": [
+              {
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ],
+                "level": "error"
+              }
+            ],
+            "description": "Description de l'image pour l'accessibilité et le SEO",
+            "name": "alt",
+            "type": "string",
+            "title": "Texte alternatif"
+          }
+        ],
+        "name": "backgroundImage",
+        "type": "image",
+        "title": "Image de fond"
+      }
+    ],
+    "name": "homePage",
+    "type": "document",
+    "title": "Page d'accueil"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Ex: Ménage & Nettoyage",
+        "name": "title",
+        "type": "string",
+        "title": "Titre"
+      },
+      {
+        "rows": 3,
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Description courte du service",
+        "name": "description",
+        "type": "text"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "✨ Sparkles (Ménage)",
+              "value": "Sparkles"
+            },
+            {
+              "title": "👔 Shirt (Repassage)",
+              "value": "Shirt"
+            },
+            {
+              "title": "🛍️ ShoppingBag (Courses)",
+              "value": "ShoppingBag"
+            },
+            {
+              "title": "🧴 SprayCan (Nettoyage)",
+              "value": "SprayCan"
+            },
+            {
+              "title": "📊 LayoutGrid (Organisation)",
+              "value": "LayoutGrid"
+            },
+            {
+              "title": "🏠 Home (Domicile)",
+              "value": "Home"
+            },
+            {
+              "title": "💼 Briefcase (Professionnel)",
+              "value": "Briefcase"
+            },
+            {
+              "title": "🧹 Broom (Balai)",
+              "value": "Broom"
+            },
+            {
+              "title": "🧽 Soap (Savon)",
+              "value": "Soap"
+            },
+            {
+              "title": "🪟 Window (Vitres)",
+              "value": "Window"
+            },
+            {
+              "title": "🛋️ Armchair (Canapé)",
+              "value": "Armchair"
+            },
+            {
+              "title": "⭐ Star (Premium)",
+              "value": "Star"
+            },
+            {
+              "title": "❤️ Heart (Satisfaction)",
+              "value": "Heart"
+            },
+            {
+              "title": "🎯 Target (Précision)",
+              "value": "Target"
+            },
+            {
+              "title": "♻️ Recycle (Écologique)",
+              "value": "Recycle"
+            }
+          ],
+          "layout": "dropdown"
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "valid",
+                "constraint": [
+                  "Sparkles",
+                  "Shirt",
+                  "ShoppingBag",
+                  "SprayCan",
+                  "LayoutGrid",
+                  "Home",
+                  "Briefcase",
+                  "Broom",
+                  "Soap",
+                  "Window",
+                  "Armchair",
+                  "Star",
+                  "Heart",
+                  "Target",
+                  "Recycle"
+                ]
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Choisir une icône pour la carte",
+        "name": "icon",
+        "type": "string",
+        "title": "Icône"
+      },
+      {
+        "initialValue": "Découvrir",
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Ex: Découvrir, En savoir plus",
+        "name": "buttonText",
+        "type": "string",
+        "title": "Texte du bouton"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "🔵 Bleu clair",
+              "value": "lightBlue"
+            },
+            {
+              "title": "🟢 Vert clair",
+              "value": "lightGreen"
+            },
+            {
+              "title": "🟣 Violet clair",
+              "value": "lightViolet"
+            },
+            {
+              "title": "🟠 Orange clair",
+              "value": "lightOrange"
+            },
+            {
+              "title": "🩷 Rose clair",
+              "value": "lightPink"
+            },
+            {
+              "title": "🟡 Jaune clair",
+              "value": "lightYellow"
+            },
+            {
+              "title": "🔴 Rouge clair",
+              "value": "lightRed"
+            },
+            {
+              "title": "⚪ Beige",
+              "value": "beige"
+            }
+          ],
+          "layout": "radio"
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "valid",
+                "constraint": [
+                  "lightBlue",
+                  "lightGreen",
+                  "lightViolet",
+                  "lightOrange",
+                  "lightPink",
+                  "lightYellow",
+                  "lightRed",
+                  "beige"
+                ]
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Couleur de fond de la carte",
+        "name": "backgroundColor",
+        "type": "string",
+        "title": "Couleur de fond"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Ordre d'affichage de la carte (1, 2, 3, etc.)",
+        "name": "order",
+        "type": "number",
+        "title": "Ordre d'affichage"
+      }
+    ],
+    "name": "serviceCard",
+    "type": "document",
+    "title": "Carte de service"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Ex: Des services pensés pour",
+        "name": "sectionTitle",
+        "type": "string",
+        "title": "Titre de la section"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Le texte qui apparaît en dégradé (ex: votre bien-être)",
+        "name": "sectionHighlight",
+        "type": "string",
+        "title": "Texte en surbrillance"
+      },
+      {
+        "rows": 2,
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Ex: Une gamme complète de prestations...",
+        "name": "sectionDescription",
+        "type": "text",
+        "title": "Description de la section"
+      },
+      {
+        "initialValue": "Voir toutes nos prestations",
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Ex: Voir toutes nos prestations",
+        "name": "ctaButtonText",
+        "type": "string",
+        "title": "Texte du bouton CTA"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1
+              },
+              {
+                "flag": "max",
+                "constraint": 6
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Sélectionner les services à afficher (max 5 recommandé)",
+        "of": [
+          {
+            "to": [
+              {
+                "type": "serviceCard"
+              }
+            ],
+            "type": "reference",
+            "title": "Reference to carte de service"
+          }
+        ],
+        "name": "displayedServices",
+        "type": "array",
+        "title": "Services affichés"
+      }
+    ],
+    "name": "servicesSection",
+    "type": "document",
+    "title": "Section Services"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Ex: Satisfait Services en",
+        "name": "sectionTitle",
+        "type": "string",
+        "title": "Titre de la section"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Le texte qui apparaît en bleu (ex: quelques chiffres)",
+        "name": "sectionHighlight",
+        "type": "string",
+        "title": "Texte en surbrillance"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Ex: Des résultats qui témoignent de notre engagement",
+        "name": "subtitle",
+        "type": "string",
+        "title": "Sous-titre"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1
+              },
+              {
+                "flag": "max",
+                "constraint": 6
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "of": [
+          {
+            "fields": [
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "description": "Ex: 100%, 50+, 24h, 30km",
+                "name": "value",
+                "type": "string",
+                "title": "Valeur"
+              },
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "description": "Ex: Clients satisfaits",
+                "name": "label",
+                "type": "string"
+              },
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "description": "Ex: Notre priorité",
+                "name": "description",
+                "type": "string"
+              },
+              {
+                "options": {
+                  "list": [
+                    {
+                      "title": "⭐ Étoile",
+                      "value": "star"
+                    },
+                    {
+                      "title": "👥 Utilisateurs",
+                      "value": "users"
+                    },
+                    {
+                      "title": "🕒 Horloge",
+                      "value": "clock"
+                    },
+                    {
+                      "title": "📍 Localisation",
+                      "value": "mapPin"
+                    }
+                  ]
+                },
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "valid",
+                        "constraint": [
+                          "star",
+                          "users",
+                          "clock",
+                          "mapPin"
+                        ]
+                      },
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "icon",
+                "type": "string",
+                "title": "Icône"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "stats",
+        "type": "array",
+        "title": "Statistiques"
+      }
+    ],
+    "name": "statsSection",
+    "type": "document",
+    "title": "Section Statistiques"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "fields": [
+          {
+            "validation": [
+              {
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ],
+                "level": "error"
+              }
+            ],
+            "name": "value",
+            "type": "string"
+          },
+          {
+            "validation": [
+              {
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ],
+                "level": "error"
+              }
+            ],
+            "name": "label",
+            "type": "string"
+          }
+        ],
+        "name": "badge",
+        "type": "object"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "founderImage",
+        "type": "image",
+        "title": "Photo fondatrice"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "founderName",
+        "type": "string",
+        "title": "Nom fondatrice"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "founderTitle",
+        "type": "string",
+        "title": "Titre fondatrice"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "founderQuote",
+        "type": "text",
+        "title": "Citation fondatrice"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "mainTitle",
+        "type": "string",
+        "title": "Titre principal"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "highlightedText",
+        "type": "string",
+        "title": "Texte en surbrillance"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "paragraph1",
+        "type": "text",
+        "title": "Paragraphe 1"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "locationHighlight",
+        "type": "string",
+        "title": "Localisation (surbrillance)"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "paragraph2",
+        "type": "text",
+        "title": "Paragraphe 2"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1
+              },
+              {
+                "flag": "max",
+                "constraint": 6
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "of": [
+          {
+            "fields": [
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "description",
+                "type": "string"
+              },
+              {
+                "options": {
+                  "list": [
+                    {
+                      "title": "❤️ Coeur",
+                      "value": "heart"
+                    },
+                    {
+                      "title": "🛡️ Bouclier",
+                      "value": "shield"
+                    },
+                    {
+                      "title": "🏆 Trophée",
+                      "value": "award"
+                    },
+                    {
+                      "title": "🎯 Cible",
+                      "value": "target"
+                    }
+                  ]
+                },
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "valid",
+                        "constraint": [
+                          "heart",
+                          "shield",
+                          "award",
+                          "target"
+                        ]
+                      },
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "icon",
+                "type": "string"
+              },
+              {
+                "options": {
+                  "list": [
+                    {
+                      "title": "Rose",
+                      "value": "pink"
+                    },
+                    {
+                      "title": "Bleu",
+                      "value": "blue"
+                    },
+                    {
+                      "title": "Jaune",
+                      "value": "yellow"
+                    },
+                    {
+                      "title": "Violet",
+                      "value": "purple"
+                    }
+                  ]
+                },
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "valid",
+                        "constraint": [
+                          "pink",
+                          "blue",
+                          "yellow",
+                          "purple"
+                        ]
+                      },
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "bgColor",
+                "type": "string"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "values",
+        "type": "array",
+        "title": "Valeurs"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "ctaButtonText",
+        "type": "string",
+        "title": "Texte bouton CTA"
+      }
+    ],
+    "name": "aboutSection",
+    "type": "document",
+    "title": "Section À Propos"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "badge",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "mainTitle",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "highlightedText",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "subtitle",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1
+              },
+              {
+                "flag": "max",
+                "constraint": 6
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "of": [
+          {
+            "fields": [
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "number",
+                "type": "string"
+              },
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "description",
+                "type": "string"
+              },
+              {
+                "options": {
+                  "list": [
+                    {
+                      "title": "📞 Téléphone",
+                      "value": "phone"
+                    },
+                    {
+                      "title": "📄 Document",
+                      "value": "fileText"
+                    },
+                    {
+                      "title": "📅 Calendrier",
+                      "value": "calendar"
+                    },
+                    {
+                      "title": "✨ Étoile",
+                      "value": "sparkles"
+                    }
+                  ]
+                },
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "valid",
+                        "constraint": [
+                          "phone",
+                          "fileText",
+                          "calendar",
+                          "sparkles"
+                        ]
+                      },
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "icon",
+                "type": "string"
+              },
+              {
+                "options": {
+                  "list": [
+                    {
+                      "title": "Bleu",
+                      "value": "blue"
+                    },
+                    {
+                      "title": "Violet",
+                      "value": "purple"
+                    },
+                    {
+                      "title": "Vert",
+                      "value": "green"
+                    },
+                    {
+                      "title": "Orange",
+                      "value": "orange"
+                    }
+                  ]
+                },
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "valid",
+                        "constraint": [
+                          "blue",
+                          "purple",
+                          "green",
+                          "orange"
+                        ]
+                      },
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "bgColor",
+                "type": "string"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "steps",
+        "type": "array"
+      }
+    ],
+    "name": "howItWorksSection",
+    "type": "document",
+    "title": "Section Comment ça fonctionne"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "fields": [
+          {
+            "validation": [
+              {
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ],
+                "level": "error"
+              }
+            ],
+            "name": "icon",
+            "type": "string"
+          },
+          {
+            "validation": [
+              {
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ],
+                "level": "error"
+              }
+            ],
+            "name": "text",
+            "type": "string"
+          }
+        ],
+        "name": "badge",
+        "type": "object"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "founderImage",
+        "type": "image",
+        "title": "Photo fondatrice"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "founderName",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "founderTitle",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "founderQuote",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "mainTitle",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "highlightedName",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "of": [
+          {
+            "fields": [
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "text",
+                "type": "string"
+              },
+              {
+                "name": "highlight",
+                "type": "string"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "paragraphs",
+        "type": "array"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1
+              },
+              {
+                "flag": "max",
+                "constraint": 2
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "of": [
+          {
+            "fields": [
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "description",
+                "type": "string"
+              },
+              {
+                "options": {
+                  "list": [
+                    {
+                      "title": "🎯 Cible",
+                      "value": "target"
+                    },
+                    {
+                      "title": "👁️ Oeil",
+                      "value": "eye"
+                    }
+                  ]
+                },
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "valid",
+                        "constraint": [
+                          "target",
+                          "eye"
+                        ]
+                      },
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "icon",
+                "type": "string"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "missionVision",
+        "type": "array"
+      }
+    ],
+    "name": "aboutPage",
+    "type": "document",
+    "title": "Page À Propos"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "badge",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "mainTitle",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "highlightedText",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "subtitle",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1
+              },
+              {
+                "flag": "max",
+                "constraint": 4
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "of": [
+          {
+            "fields": [
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "description",
+                "type": "string"
+              },
+              {
+                "options": {
+                  "list": [
+                    {
+                      "title": "❤️ Cœur",
+                      "value": "heart"
+                    },
+                    {
+                      "title": "🛡️ Bouclier",
+                      "value": "shield"
+                    },
+                    {
+                      "title": "🏆 Trophée",
+                      "value": "award"
+                    },
+                    {
+                      "title": "✨ Étoiles",
+                      "value": "sparkles"
+                    }
+                  ]
+                },
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "valid",
+                        "constraint": [
+                          "heart",
+                          "shield",
+                          "award",
+                          "sparkles"
+                        ]
+                      },
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "icon",
+                "type": "string"
+              },
+              {
+                "options": {
+                  "list": [
+                    {
+                      "title": "Rose",
+                      "value": "pink"
+                    },
+                    {
+                      "title": "Bleu",
+                      "value": "blue"
+                    },
+                    {
+                      "title": "Jaune",
+                      "value": "yellow"
+                    },
+                    {
+                      "title": "Violet",
+                      "value": "purple"
+                    }
+                  ]
+                },
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "valid",
+                        "constraint": [
+                          "pink",
+                          "blue",
+                          "yellow",
+                          "purple"
+                        ]
+                      },
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "bgColor",
+                "type": "string"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "values",
+        "type": "array"
+      }
+    ],
+    "name": "valuesSection",
+    "type": "document",
+    "title": "Section Valeurs (Page À Propos)"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "badge",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "mainTitle",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "highlightedText",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "subtitle",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "of": [
+          {
+            "fields": [
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "year",
+                "type": "string"
+              },
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      },
+                      {
+                        "flag": "max",
+                        "constraint": 2
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "shortYear",
+                "type": "string"
+              },
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "description",
+                "type": "string"
+              },
+              {
+                "options": {
+                  "list": [
+                    {
+                      "title": "Gauche",
+                      "value": "left"
+                    },
+                    {
+                      "title": "Droite",
+                      "value": "right"
+                    }
+                  ]
+                },
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "valid",
+                        "constraint": [
+                          "left",
+                          "right"
+                        ]
+                      },
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "position",
+                "type": "string"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "milestones",
+        "type": "array"
+      }
+    ],
+    "name": "timelineSection",
+    "type": "document",
+    "title": "Section Timeline (Page À Propos)"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "badge",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "mainTitle",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "highlightedText",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "description",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1
+              },
+              {
+                "flag": "max",
+                "constraint": 2
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "of": [
+          {
+            "fields": [
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "text",
+                "type": "string"
+              },
+              {
+                "options": {
+                  "list": [
+                    {
+                      "title": "Primaire",
+                      "value": "primary"
+                    },
+                    {
+                      "title": "Secondaire",
+                      "value": "secondary"
+                    }
+                  ]
+                },
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "valid",
+                        "constraint": [
+                          "primary",
+                          "secondary"
+                        ]
+                      },
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "type",
+                "type": "string"
+              },
+              {
+                "options": {
+                  "list": [
+                    {
+                      "title": "→ Flèche droite",
+                      "value": "arrowRight"
+                    },
+                    {
+                      "title": "📞 Téléphone",
+                      "value": "phone"
+                    }
+                  ]
+                },
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "valid",
+                        "constraint": [
+                          "arrowRight",
+                          "phone"
+                        ]
+                      },
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "icon",
+                "type": "string"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "buttons",
+        "type": "array"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "of": [
+          {
+            "fields": [
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "label",
+                "type": "string"
+              },
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "value",
+                "type": "string"
+              },
+              {
+                "options": {
+                  "list": [
+                    {
+                      "title": "📞 Téléphone",
+                      "value": "phone"
+                    },
+                    {
+                      "title": "💬 Message",
+                      "value": "messageCircle"
+                    },
+                    {
+                      "title": "📧 Email",
+                      "value": "mail"
+                    },
+                    {
+                      "title": "📍 Localisation",
+                      "value": "mapPin"
+                    }
+                  ]
+                },
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "valid",
+                        "constraint": [
+                          "phone",
+                          "messageCircle",
+                          "mail",
+                          "mapPin"
+                        ]
+                      },
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "icon",
+                "type": "string"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "contactInfo",
+        "type": "array"
+      }
+    ],
+    "name": "ctaSection",
+    "type": "document",
+    "title": "Section CTA (Page À Propos)"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Texte du logo affiché en haut du footer",
+        "fields": [
+          {
+            "validation": [
+              {
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ],
+                "level": "error"
+              }
+            ],
+            "name": "text",
+            "type": "string",
+            "title": "Texte principal"
+          },
+          {
+            "validation": [
+              {
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ],
+                "level": "error"
+              }
+            ],
+            "name": "highlight",
+            "type": "string",
+            "title": "Texte en surbrillance"
+          }
+        ],
+        "name": "logo",
+        "type": "object",
+        "fieldset": "identity"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Texte de présentation affiché sous le logo",
+        "name": "description",
+        "type": "text",
+        "fieldset": "identity"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Liste des coordonnées affichées (téléphone, email, adresse)",
+        "of": [
+          {
+            "fields": [
+              {
+                "options": {
+                  "list": [
+                    {
+                      "title": "📞 Téléphone",
+                      "value": "phone"
+                    },
+                    {
+                      "title": "📧 Email",
+                      "value": "mail"
+                    },
+                    {
+                      "title": "📍 Localisation",
+                      "value": "mapPin"
+                    }
+                  ]
+                },
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "valid",
+                        "constraint": [
+                          "phone",
+                          "mail",
+                          "mapPin"
+                        ]
+                      },
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "icon",
+                "type": "string",
+                "title": "Icône"
+              },
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "value",
+                "type": "string",
+                "title": "Valeur"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "contactInfo",
+        "type": "array",
+        "title": "Informations de contact",
+        "fieldset": "contact"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Menu de navigation du footer",
+        "of": [
+          {
+            "fields": [
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "label",
+                "type": "string",
+                "title": "Libellé"
+              },
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "href",
+                "type": "string",
+                "title": "Lien"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "navigation",
+        "type": "array",
+        "title": "Liens de navigation",
+        "fieldset": "navigation"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Horaires affichés dans le footer",
+        "of": [
+          {
+            "fields": [
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "day",
+                "type": "string",
+                "title": "Jour"
+              },
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "time",
+                "type": "string",
+                "title": "Horaire"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "hours",
+        "type": "array",
+        "title": "Horaires d'ouverture",
+        "fieldset": "navigation"
+      }
+    ],
+    "fieldsets": [
+      {
+        "name": "identity",
+        "title": "Identité",
+        "options": {
+          "collapsible": true,
+          "collapsed": false
+        }
+      },
+      {
+        "name": "contact",
+        "options": {
+          "collapsible": true,
+          "collapsed": false
+        }
+      },
+      {
+        "name": "navigation",
+        "options": {
+          "collapsible": true,
+          "collapsed": false
+        }
+      }
+    ],
+    "name": "footer",
+    "type": "document",
+    "title": "Pied de page"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "fields": [
+          {
+            "validation": [
+              {
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ],
+                "level": "error"
+              }
+            ],
+            "name": "badge",
+            "type": "string"
+          },
+          {
+            "validation": [
+              {
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ],
+                "level": "error"
+              }
+            ],
+            "name": "mainTitle",
+            "type": "string"
+          },
+          {
+            "validation": [
+              {
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ],
+                "level": "error"
+              }
+            ],
+            "name": "highlightedText",
+            "type": "string"
+          },
+          {
+            "validation": [
+              {
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ],
+                "level": "error"
+              }
+            ],
+            "name": "subtitle",
+            "type": "text"
+          }
+        ],
+        "name": "hero",
+        "type": "object",
+        "title": "Section Hero",
+        "fieldset": "hero"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "fields": [
+          {
+            "validation": [
+              {
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ],
+                "level": "error"
+              }
+            ],
+            "name": "title",
+            "type": "string"
+          },
+          {
+            "validation": [
+              {
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ],
+                "level": "error"
+              }
+            ],
+            "name": "subtitle",
+            "type": "text"
+          },
+          {
+            "validation": [
+              {
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ],
+                "level": "error"
+              }
+            ],
+            "of": [
+              {
+                "fields": [
+                  {
+                    "validation": [
+                      {
+                        "rules": [
+                          {
+                            "flag": "presence",
+                            "constraint": "required"
+                          }
+                        ],
+                        "level": "error"
+                      }
+                    ],
+                    "name": "name",
+                    "type": "string"
+                  },
+                  {
+                    "validation": [
+                      {
+                        "rules": [
+                          {
+                            "flag": "presence",
+                            "constraint": "required"
+                          }
+                        ],
+                        "level": "error"
+                      }
+                    ],
+                    "name": "placeholder",
+                    "type": "string"
+                  },
+                  {
+                    "options": {
+                      "list": [
+                        {
+                          "title": "Texte",
+                          "value": "text"
+                        },
+                        {
+                          "title": "Email",
+                          "value": "email"
+                        },
+                        {
+                          "title": "Téléphone",
+                          "value": "tel"
+                        },
+                        {
+                          "title": "Sélection",
+                          "value": "select"
+                        },
+                        {
+                          "title": "Zone de texte",
+                          "value": "textarea"
+                        }
+                      ]
+                    },
+                    "validation": [
+                      {
+                        "rules": [
+                          {
+                            "flag": "valid",
+                            "constraint": [
+                              "text",
+                              "email",
+                              "tel",
+                              "select",
+                              "textarea"
+                            ]
+                          },
+                          {
+                            "flag": "presence",
+                            "constraint": "required"
+                          }
+                        ],
+                        "level": "error"
+                      }
+                    ],
+                    "name": "type",
+                    "type": "string"
+                  },
+                  {
+                    "initialValue": true,
+                    "name": "required",
+                    "type": "boolean"
+                  },
+                  {
+                    "of": [
+                      {
+                        "type": "string"
+                      }
+                    ],
+                    "hidden": "conditional",
+                    "name": "options",
+                    "type": "array",
+                    "title": "Options (pour select)"
+                  }
+                ],
+                "type": "object"
+              }
+            ],
+            "name": "fields",
+            "type": "array",
+            "title": "Champs du formulaire"
+          },
+          {
+            "validation": [
+              {
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ],
+                "level": "error"
+              }
+            ],
+            "name": "submitButton",
+            "type": "string"
+          },
+          {
+            "validation": [
+              {
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ],
+                "level": "error"
+              }
+            ],
+            "name": "privacyText",
+            "type": "string"
+          },
+          {
+            "validation": [
+              {
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ],
+                "level": "error"
+              }
+            ],
+            "name": "privacyLink",
+            "type": "string"
+          }
+        ],
+        "name": "form",
+        "type": "object",
+        "title": "Configuration du formulaire",
+        "fieldset": "form"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "of": [
+          {
+            "fields": [
+              {
+                "options": {
+                  "list": [
+                    {
+                      "title": "📞 Téléphone",
+                      "value": "phone"
+                    },
+                    {
+                      "title": "📧 Email",
+                      "value": "mail"
+                    },
+                    {
+                      "title": "📍 Localisation",
+                      "value": "mapPin"
+                    },
+                    {
+                      "title": "🕐 Horloge",
+                      "value": "clock"
+                    },
+                    {
+                      "title": "💬 Message",
+                      "value": "messageCircle"
+                    }
+                  ]
+                },
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "valid",
+                        "constraint": [
+                          "phone",
+                          "mail",
+                          "mapPin",
+                          "clock",
+                          "messageCircle"
+                        ]
+                      },
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "icon",
+                "type": "string"
+              },
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "label",
+                "type": "string"
+              },
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "presence",
+                        "constraint": "required"
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "value",
+                "type": "string"
+              },
+              {
+                "name": "subtitle",
+                "type": "string"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "contactCards",
+        "type": "array",
+        "title": "Cartes de contact",
+        "fieldset": "cards"
+      }
+    ],
+    "fieldsets": [
+      {
+        "name": "hero",
+        "options": {
+          "collapsible": true,
+          "collapsed": false
+        }
+      },
+      {
+        "name": "form",
+        "title": "Formulaire",
+        "options": {
+          "collapsible": true,
+          "collapsed": false
+        }
+      },
+      {
+        "name": "cards",
+        "title": "Cartes de contact",
+        "options": {
+          "collapsible": true,
+          "collapsed": false
+        }
+      }
+    ],
+    "name": "contactPage",
+    "type": "document",
+    "title": "Page Contact"
+  }
+]

@@ -1,7 +1,16 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+      },
+    ],
+  },
+  // Transpiler framer-motion pour compatibilité avec React 19
+  transpilePackages: ['framer-motion'],
 };
 
 export default nextConfig;

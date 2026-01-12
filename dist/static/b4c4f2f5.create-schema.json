@@ -1,0 +1,318 @@
+[
+  {
+    "fields": [
+      {
+        "description": "Ex: POUR LES PARTICULIERS, POUR LES PROFESSIONNELS",
+        "name": "category",
+        "type": "string",
+        "title": "Catégorie"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "🏠 Maison / Domicile",
+              "value": "maison"
+            },
+            {
+              "title": "🏢 Immeuble / Bureaux",
+              "value": "immeuble"
+            },
+            {
+              "title": "🏪 Magasin / Commerce",
+              "value": "magasin"
+            },
+            {
+              "title": "🏭 Usine / Industrie",
+              "value": "usine"
+            },
+            {
+              "title": "🧹 Balai / Nettoyage",
+              "value": "balai"
+            },
+            {
+              "title": "🧼 Spray / Produits",
+              "value": "spray"
+            },
+            {
+              "title": "✨ Étoiles / Brillance",
+              "value": "etoiles"
+            },
+            {
+              "title": "👔 T-Shirt / Repassage",
+              "value": "tshirt"
+            },
+            {
+              "title": "🧺 Panier / Linge",
+              "value": "panier"
+            },
+            {
+              "title": "🪟 Fenêtre / Vitres",
+              "value": "fenetre"
+            },
+            {
+              "title": "🚿 Douche / Sanitaires",
+              "value": "douche"
+            },
+            {
+              "title": "🍽️ Vaisselle / Cuisine",
+              "value": "vaisselle"
+            },
+            {
+              "title": "📦 Carton / Déménagement",
+              "value": "carton"
+            },
+            {
+              "title": "📊 Grille / Organisation",
+              "value": "grille"
+            },
+            {
+              "title": "⏰ Horloge / Régulier",
+              "value": "horloge"
+            }
+          ],
+          "layout": "dropdown"
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "valid",
+                "constraint": [
+                  "maison",
+                  "immeuble",
+                  "magasin",
+                  "usine",
+                  "balai",
+                  "spray",
+                  "etoiles",
+                  "tshirt",
+                  "panier",
+                  "fenetre",
+                  "douche",
+                  "vaisselle",
+                  "carton",
+                  "grille",
+                  "horloge"
+                ]
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "icon",
+        "type": "string",
+        "title": "Icône"
+      },
+      {
+        "description": "Ex: Entretien courant",
+        "name": "title",
+        "type": "string",
+        "title": "Titre"
+      },
+      {
+        "name": "description",
+        "type": "text"
+      },
+      {
+        "description": "Liste des services inclus",
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "features",
+        "type": "array",
+        "title": "Caractéristiques"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "image",
+        "type": "image"
+      },
+      {
+        "initialValue": "Demander un devis",
+        "name": "buttonText",
+        "type": "string",
+        "title": "Texte du bouton"
+      },
+      {
+        "description": "Pour contrôler l'ordre des prestations (1, 2, 3...)",
+        "name": "order",
+        "type": "number",
+        "title": "Ordre d'affichage"
+      }
+    ],
+    "name": "prestation",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Ex: Services de qualité pour",
+        "name": "heroTitle",
+        "type": "string",
+        "title": "Titre principal"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Le texte qui apparaît en bleu (ex: votre intérieur)",
+        "name": "heroHighlightedText",
+        "type": "string",
+        "title": "Texte en surbrillance"
+      },
+      {
+        "rows": 4,
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Le paragraphe de description sous le titre",
+        "name": "heroDescription",
+        "type": "text",
+        "title": "Description"
+      },
+      {
+        "rows": 2,
+        "description": "Version courte pour mobile (optionnel)",
+        "name": "heroDescriptionMobile",
+        "type": "text",
+        "title": "Description mobile"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Ex: +33 7 69 64 07 24",
+        "name": "phoneNumber",
+        "type": "string",
+        "title": "Numéro de téléphone"
+      },
+      {
+        "initialValue": "Appeler maintenant",
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Texte du bouton principal (téléphone)",
+        "name": "ctaButton1Text",
+        "type": "string",
+        "title": "Texte bouton 1"
+      },
+      {
+        "description": "Texte alternatif pour desktop (optionnel, affichera le numéro par défaut)",
+        "name": "ctaButton1TextDesktop",
+        "type": "string",
+        "title": "Texte bouton 1 (Desktop)"
+      },
+      {
+        "initialValue": "Demander un devis",
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Texte du bouton secondaire (devis)",
+        "name": "ctaButton2Text",
+        "type": "string",
+        "title": "Texte bouton 2"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "fields": [
+          {
+            "validation": [
+              {
+                "rules": [
+                  {
+                    "flag": "presence",
+                    "constraint": "required"
+                  }
+                ],
+                "level": "error"
+              }
+            ],
+            "description": "Description de l'image pour l'accessibilité et le SEO",
+            "name": "alt",
+            "type": "string",
+            "title": "Texte alternatif"
+          }
+        ],
+        "name": "backgroundImage",
+        "type": "image",
+        "title": "Image de fond"
+      }
+    ],
+    "name": "homePage",
+    "type": "document",
+    "title": "Page d'accueil"
+  }
+]
