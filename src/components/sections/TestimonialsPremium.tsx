@@ -5,7 +5,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
 import { Container } from "@/components/ui";
 
-const defaultTestimonials = [
+type Testimonial = {
+  name: string;
+  role: string;
+  rating: number;
+  quote: string;
+  avatar: string;
+};
+
+const defaultTestimonials: Testimonial[] = [
   { name: "Claude B.", role: "Particulier", rating: 5, quote: "Tina est une excellente personne, très sérieuse et autonome. Elle voit le travail toute seule. Je recommande fortement !", avatar: "C" },
   { name: "Martin M.", role: "Particulier", rating: 5, quote: "Prestation au top. Je recommande les yeux fermés.", avatar: "M" },
   { name: "Rivosa R.", role: "Déménagement", rating: 5, quote: "Réactivité, ponctualité, qualité du travail, professionnalisme et prix correct. Je recommande vivement !", avatar: "R" },
@@ -15,7 +23,7 @@ function TestimonialsPremium({ data }: { data?: any }) {
   const badge = data?.badge || "Témoignages";
   const mainTitle = data?.mainTitle || "Ce que disent nos clients";
   const subtitle = data?.subtitle || "Leur satisfaction est notre priorité";
-  const testimonials = data?.testimonials || defaultTestimonials;
+  const testimonials: Testimonial[] = data?.testimonials || defaultTestimonials;
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
@@ -116,7 +124,7 @@ function TestimonialsPremium({ data }: { data?: any }) {
                       {/* Stars */}
                       <div className="flex gap-0.5 justify-center md:justify-start mb-3">
                         {[...Array(testimonials[currentIndex].rating)].map(
-                          (_, i) => (
+                          (_: unknown, i: number) => (
                             <Star
                               key={i}
                               size={16}
@@ -159,7 +167,7 @@ function TestimonialsPremium({ data }: { data?: any }) {
 
               {/* Dots */}
               <div className="flex justify-center gap-2">
-                {testimonials.map((_, index) => (
+                {testimonials.map((_: Testimonial, index: number) => (
                   <button
                     key={index}
                     onClick={() => {
