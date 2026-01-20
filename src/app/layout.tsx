@@ -42,22 +42,29 @@ export const metadata: Metadata = {
     locale: siteConfig.locale,
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: siteConfig.name,
+    title: `${siteConfig.name} | Ménage & Nettoyage à Pau (64)`,
     description: siteConfig.description,
     images: [
       {
         url: `${siteConfig.url}/images/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: siteConfig.name,
+        alt: `${siteConfig.name} - Service de ménage et nettoyage professionnel à Pau`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: siteConfig.name,
+    title: `${siteConfig.name} | Ménage & Nettoyage à Pau (64)`,
     description: siteConfig.description,
-    images: [`${siteConfig.url}/images/og-image.jpg`],
+    images: [
+      {
+        url: `${siteConfig.url}/images/og-image.jpg`,
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.name} - Service de ménage et nettoyage professionnel à Pau`,
+      },
+    ],
   },
   robots: {
     index: true,
@@ -86,8 +93,9 @@ export default function RootLayout({
   return (
     <html lang="fr" className={inter.variable}>
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" href="/images/logo.png" type="image/png" sizes="32x32" />
+        <link rel="icon" href="/images/logo.png" type="image/png" sizes="16x16" />
+        <link rel="apple-touch-icon" href="/images/logo.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#3B82F6" />
         <meta name="geo.region" content="FR-64" />

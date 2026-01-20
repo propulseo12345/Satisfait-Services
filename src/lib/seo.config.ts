@@ -4,7 +4,7 @@ export const siteConfig = {
   name: "Satisfait Services",
   url: "https://satisfaitservices.fr",
   description:
-    "Service de ménage à domicile, nettoyage professionnel et home organising à Pau, Narcastet et Pyrénées-Atlantiques. Devis gratuit.",
+    "✨ Service de ménage à domicile, nettoyage professionnel et home organising à Pau, Narcastet et Pyrénées-Atlantiques. Personnel de confiance, devis gratuit sous 24h. Contactez Tina !",
   author: "Tina",
   locale: "fr_FR",
   phone: "+33 7 69 64 07 24",
